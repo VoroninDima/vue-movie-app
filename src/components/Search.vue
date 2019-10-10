@@ -61,7 +61,6 @@
         overflow-y: scroll;
 
         & > div {
-            padding: 5px 10px;
             margin: 0;
             font-size: 16px;
             cursor: pointer;
@@ -76,8 +75,10 @@
 
     .nav-link {
         text-decoration: none;
+        display: block;
+        width: 100%;
         color: #fff;
-
+        padding: 5px 10px;
     }
 
     .hideSearched {

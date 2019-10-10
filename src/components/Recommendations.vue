@@ -39,6 +39,13 @@
                 this.noRecommend = true
             }
         },
+        updated() {
+            if (this.getCurrentFilm.belongs_to_collection) {
+                this.noRecommend = false
+            } else {
+                this.noRecommend = true
+            }
+        },
         beforeDestroy() {
             this.fetchCurrentFilm(0);
             this.fetchRecommendFilm(0)
