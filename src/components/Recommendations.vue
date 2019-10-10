@@ -33,7 +33,8 @@
         },
         mounted() {
             if (this.getCurrentFilm.belongs_to_collection) {
-                this.fetchRecommendFilm(this.getCurrentFilm.belongs_to_collection.id)
+                this.fetchRecommendFilm(this.getCurrentFilm.belongs_to_collection.id);
+                this.noRecommend = false
             } else {
                 this.noRecommend = true
             }
