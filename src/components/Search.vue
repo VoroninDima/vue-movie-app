@@ -2,13 +2,11 @@
     <div class="search">
         <v-text-field label="Search" v-model="value" @input="handleInput"/>
         <div class="searched" v-if="getSearchedFilms" :class="{hideSearched}">
-            <ul>
-                <li v-for="film in getSearchedFilms" @click="handleClick(film.id)">
-                    <router-link :to="{name:'movie', params: {id:film.id}}" class="nav-link">
-                        {{film.title}}
-                    </router-link>
-                </li>
-            </ul>
+            <div v-for="film in getSearchedFilms">
+                <router-link :to="{name:'movie', params: {id:film.id}}" class="nav-link">
+                    {{film.title}}
+                </router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -62,13 +60,7 @@
         height: 400px;
         overflow-y: scroll;
 
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        li {
-            list-style: none;
+        & > div {
             padding: 5px 10px;
             margin: 0;
             font-size: 16px;
@@ -85,6 +77,7 @@
     .nav-link {
         text-decoration: none;
         color: #fff;
+
     }
 
     .hideSearched {
